@@ -1,9 +1,12 @@
+// #include <vld.h>
+
 #include <QtWidgets/QApplication>
 #include <QtCore/QCommandLineParser>
 #include <QtNetwork/QHostAddress>
 #include "includes/Server.hpp"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication app(argc, argv);
     app.setQuitOnLastWindowClosed(false);
 

@@ -3,7 +3,8 @@
 #include <QtNetwork/QTcpSocket>
 #include <QtGui/QImage>
 
-const int DEFAULT_ERROR = -1;
+typedef QSharedPointer<QImage> QImageSharedPtr;
+Q_DECLARE_METATYPE(QImageSharedPtr);
 
 class LoadImageTask : public QObject, public QRunnable
 {
@@ -19,7 +20,7 @@ class LoadImageTask : public QObject, public QRunnable
         qintptr socketDescriptor;
 
     signals:
-        void imageReady(const QImage *image, const QSize& size = QSize(500, 500));
+        void imageReady(QImageSharedPtr image, const QSize& size = QSize(500, 500));
         void workerError(int socketError, const QString& message);
 
 };

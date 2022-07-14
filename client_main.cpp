@@ -1,3 +1,5 @@
+// #include <vld.h>
+
 #include <QtWidgets/QApplication>
 #include <QtCore/QCommandLineParser>
 #include <QtNetwork/QHostAddress>

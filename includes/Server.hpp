@@ -3,6 +3,9 @@
 #include <QtWidgets/QLabel>
 #include <QtCore/QList>
 #include <QtWidgets/QMessageBox>
+#include <QtCore/QMetaType>
+
+#include "Runnable.hpp"
 
 class Server : public QTcpServer
 {
@@ -26,6 +29,6 @@ class Server : public QTcpServer
         void error(int socketError, const QString& message);
 
     private slots:
-        void displayImage(const QImage *image, const QSize& size = QSize(500, 500));
+        void displayImage(QImageSharedPtr image, const QSize& size = QSize(500, 500));
         void handleError(int errorCode, const QString& message);
 };

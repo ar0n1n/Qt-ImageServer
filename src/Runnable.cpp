@@ -13,7 +13,7 @@ void LoadImageTask::run()
     QDataStream in(&tcpSocket);
     in.setVersion(QDataStream::Qt_5_15);
 
-    QImage *image = new QImage();
+    QSharedPointer<QImage> image (new QImage());
     qint64 bytesToReceive = 0;
 
     do {

@@ -1,9 +1,11 @@
 #include "../includes/Server.hpp"
-#include "../includes/Runnable.hpp"
 
 Server::Server(quint32 maxImages, QObject *parent)
     : QTcpServer(parent), _insertPos(0)
 {
+
+    qRegisterMetaType<QImageSharedPtr>("QImageSharedPtr");
+
     connect(this, &Server::error, this, &Server::handleError);
     ringBuffer.resize(maxImages);
 }
@@ -31,7 +33,7 @@ void Server::incomingConnection(qintptr socketDescriptor)
     threadPool.start(task);
 }
 
-void Server::displayImage(const QImage *image, const QSize& size)
+void Server::displayImage(QSharedPointer<QImage> image, const QSize& size)
 {
     if (!ringBuffer[_insertPos]) {
         ringBuffer[_insertPos] = new QLabel();
