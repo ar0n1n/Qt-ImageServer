@@ -1,7 +1,9 @@
+#pragma once
+
 #include <QtCore/QObject>
-#include <QtNetwork/QTcpSocket>
-#include <QtNetwork/QHostAddress>
 #include <QtGui/QImage>
+#include <QtNetwork/QHostAddress>
+#include <QtNetwork/QTcpSocket>
 #include <QtWidgets/QMessageBox>
 
 class Client : public QObject

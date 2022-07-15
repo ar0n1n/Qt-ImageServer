@@ -1,9 +1,11 @@
-#include <QtNetwork/QTcpServer>
-#include <QtCore/QThreadPool>
-#include <QtWidgets/QLabel>
+#pragma once
+
 #include <QtCore/QList>
-#include <QtWidgets/QMessageBox>
 #include <QtCore/QMetaType>
+#include <QtCore/QThreadPool>
+#include <QtNetwork/QTcpServer>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMessageBox>
 
 #include "Runnable.hpp"
 

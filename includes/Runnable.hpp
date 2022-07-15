@@ -1,7 +1,9 @@
-#include <QtCore/QRunnable>
+#pragma once
+
 #include <QtCore/QDataStream>
-#include <QtNetwork/QTcpSocket>
+#include <QtCore/QRunnable>
 #include <QtGui/QImage>
+#include <QtNetwork/QTcpSocket>
 
 typedef QSharedPointer<QImage> QImageSharedPtr;
 Q_DECLARE_METATYPE(QImageSharedPtr);
